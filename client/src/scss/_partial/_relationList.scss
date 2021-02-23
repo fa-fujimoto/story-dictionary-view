@@ -1,6 +1,3 @@
-@import './color';
-@import './util';
-
 @mixin relation-list-item-design($block-name, $color) {
   & #{$block-name}__icon {
     &::before {

@@ -1,0 +1,151 @@
+.select {
+  $base: &;
+
+  position: relative;
+
+  & &__body {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-weight: 500;
+    color: $form-item-color-active;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &-inner {
+      @include ellipsis;
+
+      line-height: 1.5;
+    }
+
+    &::before,
+    &::after {
+      width: 0;
+      height: 0;
+      content: '';
+      transition: 0.3s;
+    }
+
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 1px solid $form-item-color-active;
+    }
+
+    &::after {
+      display: inline-block;
+      border-top: 1px solid $form-item-color;
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+    }
+
+    &.--hover {
+      &::after {
+        border-top-color: $form-item-color-active;
+      }
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  & &__drawer {
+    position: absolute;
+    right: 0;
+    z-index: $select-options-list;
+    display: none;
+
+    &.--open {
+      display: block;
+    }
+  }
+
+  & &__list {
+    min-width: 200px;
+    padding: 0;
+    margin: 8px 0 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: $form-item-bg-color;
+    border: 1px solid $form-item-border-color;
+    border-radius: 6px;
+  }
+
+  & &__item {
+    position: relative;
+    padding: 8px 16px;
+    line-height: 1.5;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $form-item-border-color;
+    }
+
+    &.--hover {
+      background-color: $form-item-bg-color-hover;
+    }
+
+    &-inner {
+      padding-left: 2em;
+    }
+  }
+
+  & &__checkmark {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    margin: auto;
+  }
+
+  & &__label {
+    padding-right: 0.5em;
+    font-weight: 400;
+    color: $form-item-color;
+
+    &::before {
+      display: inline-block;
+      padding-right: 0.5em;
+      content: '>';
+    }
+  }
+
+  & &__value {
+    display: inline-block;
+    color: $form-item-color-active;
+  }
+
+  &.--sm {
+    #{$base}__body {
+      padding: 4px 8px;
+      font-size: 14px;
+
+      &-inner {
+        padding-right: 0.5em;
+      }
+
+      &::after {
+        border-top-width: 4px;
+        border-right-width: 3px;
+        border-left-width: 3px;
+      }
+    }
+  }
+
+  &.--disabled {
+    #{$base}__body {
+      opacity: 0.7;
+    }
+  }
+}

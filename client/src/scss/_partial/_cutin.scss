@@ -1,6 +1,3 @@
-@import './z-index';
-@import './color';
-
 @mixin cutin-gradation($color) {
   background-image: linear-gradient(to bottom, rgba($color, 0.3) 0%, rgba($color, 0.85) 45%, rgba($color, 0.85) 50%, rgba($color, 0.85) 55%, rgba($color, 0.3) 100%);
   box-shadow: 0 0 50px $color;

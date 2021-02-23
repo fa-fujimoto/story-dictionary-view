@@ -1,0 +1,70 @@
+$base-font-color: #333;
+$base-link-color: #217cd7;
+$base-link-color-hover: #6587a9;
+$base-light-font-color: #999;
+$base-bg-color: #eee;
+$base-lighten-bg-color: #fefefe;
+$base-lighten-border-color: #ccc;
+$base-darken-bg-color: #666;
+$base-darken-bg-font-color: $base-bg-color;
+$base-darken-bg-link-color: #ccc;
+$base-border-color: $base-font-color;
+$base-light-border-color: $base-light-font-color;
+
+$base-hover-color: #999;
+$base-hover-sub-color: #fefefe;
+
+$form-item-color: $base-light-font-color;
+$form-item-color-active: $base-font-color;
+
+$form-item-bg-color: $base-lighten-bg-color;
+$form-item-border-color: $base-lighten-border-color;
+$form-item-bg-color-hover: #f9f9f9;
+
+$positive-color: #07aa6c;
+$danger-color: #c12323;
+
+$header-bg-color: #f4f4f4;
+$header-border-color: #ddd;
+
+$sidemenu-toggle-button-border: #888;
+$sidemenu-bg-color: #777;
+$sidemenu-font-color: $base-darken-bg-font-color;
+$categories-bg-color: #606060;
+$categories-bd-color: #aaa;
+
+$header-dropdown-menu-bg: $base-lighten-bg-color;
+$header-dropdown-menu-border: $base-border-color;
+$header-dropdown-menu-division: $base-lighten-border-color;
+$header-dropdown-menu-item-font-color-hover: $base-hover-sub-color;
+$header-dropdown-menu-item-bg-hover: $base-hover-color;
+
+$body-font-color: $base-font-color;
+$body-light-font-color: $base-light-font-color;
+$body-bg-color: $base-bg-color;
+
+$user-header-bg: #f9f9f9;
+$user-header-border: $base-lighten-border-color;
+$user-header-nav-bar-bg: $base-darken-bg-color;
+
+$avatar-border-color: $base-border-color;
+$avatar-outline-color: $base-light-border-color;
+
+$tabbar-font-color: $base-darken-bg-font-color;
+$tabbar-bg-color: $base-darken-bg-color;
+
+$tabbar-font-color-active: $base-font-color;
+$tabbar-bg-color-active: $user-header-bg;
+$tabbar-font-color-hover: $tabbar-font-color;
+$tabbar-bg-color-hover: #999;
+
+$button-primary-color: $base-font-color;
+$button-primary-color-hover: $base-bg-color;
+
+$button-positive-color: $positive-color;
+$button-positive-color-hover: $base-bg-color;
+
+$button-danger-color: $danger-color;
+$button-danger-color-hover: $base-bg-color;
+
+$project-item-decoration: #999;

@@ -1,0 +1,60 @@
+.user-header {
+  position: sticky;
+  top: -1px;
+  z-index: $user-header;
+  display: flex;
+  overflow: hidden;
+  background-color: $user-header-bg;
+  border-bottom: 1px solid $user-header-border;
+
+  & &__info {
+    display: flex;
+    width: 260px + (16px * 2);
+    min-width: 260px + (16px * 2);
+    padding-right: 16px;
+    padding-left: 32px;
+  }
+
+  & &__nav-bar {
+    position: relative;
+    width: 100%;
+    padding-right: 32px;
+    padding-left: 17px;
+    background-color: $user-header-nav-bar-bg;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      content: '';
+      border-bottom: 68px solid transparent;
+      border-left: 32px solid $user-header-bg;
+    }
+  }
+
+  & &__avatar {
+    z-index: $user-header-avatar;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 16px;
+    opacity: 0;
+    transition: 0.2s;
+
+    &.--is-show-avatar {
+      opacity: 1;
+    }
+  }
+
+  & &__name {
+    @include ellipsis();
+
+    display: inline-block;
+    width: 100%;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

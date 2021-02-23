@@ -138,7 +138,8 @@ const CharacterSelector: FC<ICharacterSelectorProps> = ({
 
         <div className={createClassName('character-selector', 'button-area')}>
           <Button
-            modifire={['primary']}
+            color='primary'
+            size='sm'
             isDisabled={!isValidate()}
             onClick={(): void => onSelect(targetIdx, ...selected)}
           >
@@ -146,7 +147,8 @@ const CharacterSelector: FC<ICharacterSelectorProps> = ({
           </Button>
 
           <Button
-            modifire={['danger']}
+            color='danger'
+            size='sm'
             onClick={(): void => setSelected([])}
           >
             クリア

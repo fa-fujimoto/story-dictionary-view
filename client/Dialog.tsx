@@ -14,12 +14,12 @@ interface IDialogProps {
 
 const Dialog: FC<IDialogProps> = ({title, classNames = '', modifire = '', positiveTxt = 'OK', negativeTxt = 'Cancel', onPositiveFunc, onNegativeFunc, children}) => {
   const positiveBtn = onPositiveFunc ? (
-    <Button modifire={'primary'} onClick={onPositiveFunc}>
+    <Button size={'sm'} color={'primary'} onClick={onPositiveFunc}>
       {positiveTxt}
     </Button>
   ) : (null)
   const negativeBtn = onNegativeFunc ? (
-    <Button modifire={'secondary'} onClick={onNegativeFunc}>
+    <Button size={'sm'} color={'secondary'} onClick={onNegativeFunc}>
       {negativeTxt}
     </Button>
   ) : (null)

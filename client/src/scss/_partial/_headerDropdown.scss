@@ -1,0 +1,129 @@
+.header-dropdown {
+  $base: &;
+
+  position: relative;
+
+  &__button {
+    position: relative;
+    padding-right: 14px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 3px;
+      bottom: 0;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin: auto;
+      content: '';
+      border-top: 5px solid $form-item-color;
+      border-right: 3px solid transparent;
+      border-left: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    &:hover,
+    &.--active {
+      &::before {
+        border-top-color: $form-item-color-active;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    z-index: $header-dropdown-menu;
+    display: none;
+    width: 180px;
+
+    &.--open {
+      display: block;
+    }
+
+    & &-box {
+      position: relative;
+      margin-top: 8px;
+      background: $header-dropdown-menu-bg;
+      border-radius: 5px;
+      box-shadow: 0 0 1px $header-dropdown-menu-border;
+
+      &::before,
+      &::after {
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: '';
+      }
+
+      &::before {
+        top: -6px;
+        right: 5px + 15px;
+        z-index: 3;
+        border-right: 5px solid transparent;
+        border-bottom: 6px solid $header-dropdown-menu-bg;
+        border-left: 5px solid transparent;
+      }
+
+      &::after {
+        top: -7px;
+        right: 19px;
+        z-index: 2;
+        border-right: 6px solid transparent;
+        border-bottom: 7px solid rgba($header-dropdown-menu-border, 0.3);
+        border-left: 6px solid transparent;
+      }
+    }
+  }
+
+  & &__block {
+    &:not(:last-child) {
+      border-bottom: 1px solid $header-dropdown-menu-division;
+    }
+  }
+
+  & &__list {
+    padding: 8px 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  & &__item {
+    &.--hover {
+      #{$base}__link {
+        color: $header-dropdown-menu-item-font-color-hover;
+        background-color: $header-dropdown-menu-item-bg-hover;
+      }
+    }
+  }
+
+  & &__link {
+    display: block;
+    padding: 4px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $base-font-color;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  & &__account {
+    font-size: 14px;
+    line-height: 1.2;
+
+    &-name {
+      font-weight: 600;
+
+      @include ellipsis();
+    }
+
+    &-link {
+      display: block;
+      padding: 8px 16px;
+      color: $base-font-color;
+      text-decoration: none;
+    }
+  }
+}

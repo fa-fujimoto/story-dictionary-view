@@ -1,0 +1,48 @@
+
+%sidemenu-link {
+  display: block;
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  text-decoration: none;
+}
+
+%sidemenu-inner {
+  @include ellipsis;
+
+  position: relative;
+  color: $sidemenu-font-color;
+}
+
+%sidemenu-inner-before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 16px;
+  margin: auto;
+  content: '';
+  border-bottom: 1px solid $sidemenu-font-color;
+  transition: 0.3s;
+}
+
+%sidemenu-inner-before-hover {
+  &::before {
+    width: 100%;
+  }
+}
+
+%sidemenu-count {
+  box-sizing: content-box;
+  display: inline-block;
+  height: 14px;
+  padding: 4px 8px;
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 1;
+  color: $sidemenu-font-color;
+  text-align: center;
+  background: #333;
+  border-radius: 22px;
+}

@@ -8,7 +8,7 @@ export default function createClassName(baseClassName: string | string[], elemen
       const result = [className]
       for (const modifireName of modifireClassList) {
         if (modifireName.length > 0) {
-          result.push(`${className}--${modifireName}`)
+          result.push(`--${modifireName}`)
         }
       }
 

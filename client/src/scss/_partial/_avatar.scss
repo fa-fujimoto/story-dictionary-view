@@ -1,0 +1,47 @@
+.avatar {
+  $base: &;
+
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 50%;
+  box-shadow: 0 0 1px $avatar-border-color;
+
+  &__image {
+    display: inline-block;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &.--bd {
+    box-shadow: none;
+
+    #{$base}__image {
+      border: 1px solid $avatar-outline-color;
+    }
+  }
+
+  &.--ss {
+    @include square(24px);
+
+    #{$base}__image {
+      @include square(24px);
+    }
+  }
+
+  &.--sm {
+    @include square(32px);
+
+    #{$base}__image {
+      @include square(32px);
+    }
+  }
+
+  &.--lg {
+    @include square(260px);
+
+    #{$base}__image {
+      @include square(260px);
+    }
+  }
+}

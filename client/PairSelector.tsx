@@ -304,7 +304,7 @@ class PairSelector extends Component<IPairSelectorProps, IPairSelectorState> {
 
           {characterSupportPointElem}
 
-          <Button modifire={'primary'} onClick={handleConfirmBtnClick} isDisabled={isValidate()}>確定</Button>
+          <Button size='sm' color={'primary'} onClick={handleConfirmBtnClick} isDisabled={isValidate()}>確定</Button>
         </div>
       </div>
     )

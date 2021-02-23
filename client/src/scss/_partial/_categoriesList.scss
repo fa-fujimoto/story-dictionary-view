@@ -1,0 +1,47 @@
+.categories-list {
+  $base: &;
+
+  box-sizing: content-box;
+  padding-left: 48px;
+  overflow: hidden;
+  list-style-type: none;
+  background: $categories-bg-color;
+  transition: 0.3s;
+
+  &.--open {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px solid $categories-bd-color;
+    border-bottom: 1px solid $categories-bd-color;
+  }
+
+  &__item {
+    padding-right: 16px;
+  }
+
+  &__link {
+    @extend %sidemenu-link;
+
+    padding: 4px 0;
+
+    &:hover {
+      #{$base}__inner {
+        &::before {
+          @extend %sidemenu-inner-before-hover;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    @extend %sidemenu-inner;
+
+    &::before {
+      @extend %sidemenu-inner-before;
+    }
+  }
+
+  &__count {
+    @extend %sidemenu-count;
+  }
+}

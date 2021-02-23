@@ -1,6 +1,3 @@
-@import './color';
-@import './util';
-
 @mixin skill-card-type-design($block-name, $color) {
   border-color: $color;
 

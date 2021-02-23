@@ -1,0 +1,61 @@
+.input {
+  $base: &;
+
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid $form-item-color;
+  transition: 0.3s;
+
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    content: '';
+    border-bottom: 1px solid $form-item-color-active;
+    transition: 0.3s;
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    padding: 4px 32px 4px 8px;
+    color: $form-item-color-active;
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+      color: $form-item-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & &__pencil {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    bottom: 0;
+    margin: auto;
+    color: $form-item-color;
+    transition: 0.3s;
+  }
+
+  &:hover,
+  &.--active {
+    &::after {
+      width: 100%;
+    }
+
+    #{$base}__pencil {
+      color: $form-item-color-active;
+    }
+  }
+
+  &.--sm {
+    height: 30px;
+  }
+}

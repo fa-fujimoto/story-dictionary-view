@@ -1,0 +1,89 @@
+.filter-form {
+  & &__block {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid $base-lighten-border-color;
+  }
+
+  & &__input-area {
+    display: flex;
+    width: 100%;
+  }
+
+  & &__button-area {
+    display: flex;
+    padding-left: 16px;
+  }
+
+  & &__item {
+    display: flex;
+
+    &.--full {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      padding-right: 16px;
+    }
+  }
+
+  & &__query {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-right: 16px;
+
+    &-result {
+      display: flex;
+
+      &:not(:last-child) {
+        padding-right: 16px;
+      }
+    }
+
+    &-label {
+      position: relative;
+      display: inline-block;
+      padding-right: 1em;
+      color: $form-item-color;
+
+      &::after {
+        position: absolute;
+        right: 0.5em;
+        display: inline-block;
+        width: 0.5em;
+        text-align: center;
+        content: ':';
+      }
+    }
+
+    &-value {
+      @include ellipsis;
+
+      width: 100%;
+      font-weight: 500;
+      color: $form-item-color-active;
+    }
+  }
+
+  & &__reset {
+    display: flex;
+    align-items: center;
+    color: $form-item-color;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $form-item-color-active;
+    }
+
+    &-icon {
+      top: 0;
+    }
+
+    &-text {
+      padding-left: 0.5em;
+    }
+  }
+}

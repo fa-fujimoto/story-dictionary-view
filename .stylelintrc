@@ -7,7 +7,7 @@
     "scss/at-rule-no-unknown": true,
     "at-rule-no-vendor-prefix": true,
     "font-family-name-quotes": "always-where-recommended",
-    "font-weight-notation": "named-where-possible",
+    "font-weight-notation": "numeric",
     "function-url-quotes": "always",
     "media-feature-name-no-vendor-prefix": true,
     "no-descending-specificity": null,

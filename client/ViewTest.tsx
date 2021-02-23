@@ -355,13 +355,13 @@ const ViewTest: FC<{}> = () => {
           <Route path='/test/Button/Middle' render={(): JSX.Element => {
             return (
               <Ground>
-                <Button modifire={'primary'} onClick={handleCallback}>
+                <Button size='md' color='primary' onClick={handleCallback}>
                   Primary
                 </Button>
-                <Button modifire={'secondary'} onClick={handleCallback}>
+                <Button size='md' color='secondary' onClick={handleCallback}>
                   Secondary
                 </Button>
-                <Button modifire={'danger'} onClick={handleCallback}>
+                <Button size='md' color='danger' onClick={handleCallback}>
                   Danger
                 </Button>
               </Ground>
@@ -371,13 +371,13 @@ const ViewTest: FC<{}> = () => {
           <Route path='/test/Button/Large' render={(): JSX.Element => {
             return (
               <Ground>
-                <Button modifire={['primary', 'lg']} onClick={handleCallback}>
+                <Button color='primary' size='lg' onClick={handleCallback}>
                   Primary
                 </Button>
-                <Button modifire={['secondary', 'lg']} onClick={handleCallback}>
+                <Button color='secondary' size='lg' onClick={handleCallback}>
                   Secondary
                 </Button>
-                <Button modifire={['danger', 'lg']} onClick={handleCallback}>
+                <Button color='danger' size='lg' onClick={handleCallback}>
                   Danger
                 </Button>
               </Ground>
@@ -387,13 +387,13 @@ const ViewTest: FC<{}> = () => {
           <Route path='/test/Button/Small' render={(): JSX.Element => {
             return (
               <Ground>
-                <Button modifire={['primary', 'sm']} onClick={handleCallback}>
+                <Button color='primary' size='sm' onClick={handleCallback}>
                   Primary
                 </Button>
-                <Button modifire={['secondary', 'sm']} onClick={handleCallback}>
+                <Button color='secondary' size='sm' onClick={handleCallback}>
                   Secondary
                 </Button>
-                <Button modifire={['danger', 'sm']} onClick={handleCallback}>
+                <Button color='danger' size='sm' onClick={handleCallback}>
                   Danger
                 </Button>
               </Ground>
@@ -403,13 +403,13 @@ const ViewTest: FC<{}> = () => {
           <Route path='/test/Button/Block' render={(): JSX.Element => {
             return (
               <Ground>
-                <Button modifire={['primary', 'block']} onClick={handleCallback}>
+                <Button size='md' color='primary' modifire={['block']} onClick={handleCallback}>
                   Primary
                 </Button>
-                <Button modifire={['secondary', 'block']} onClick={handleCallback}>
+                <Button size='md' color='secondary' modifire={['block']} onClick={handleCallback}>
                   Secondary
                 </Button>
-                <Button modifire={['danger', 'block']} onClick={handleCallback}>
+                <Button size='md' color='danger' modifire={['block']} onClick={handleCallback}>
                   Danger
                 </Button>
               </Ground>
@@ -419,13 +419,13 @@ const ViewTest: FC<{}> = () => {
           <Route path='/test/Button/Disabled' render={(): JSX.Element => {
             return (
               <Ground>
-                <Button modifire={'primary'} onClick={handleCallback} isDisabled={true}>
+                <Button size={'sm'} color={'primary'} onClick={handleCallback} isDisabled={true}>
                   Primary
                 </Button>
-                <Button modifire={'secondary'} onClick={handleCallback} isDisabled={true}>
+                <Button size={'sm'} color={'secondary'} onClick={handleCallback} isDisabled={true}>
                   Secondary
                 </Button>
-                <Button modifire={'danger'} onClick={handleCallback} isDisabled={true}>
+                <Button size={'sm'} color={'danger'} onClick={handleCallback} isDisabled={true}>
                   Danger
                 </Button>
               </Ground>

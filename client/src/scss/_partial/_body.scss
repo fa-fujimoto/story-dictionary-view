@@ -1,0 +1,8 @@
+.body {
+  padding: 16px;
+
+  & &__main {
+    padding: 16px;
+    background-color: #fafafa;
+  }
+}

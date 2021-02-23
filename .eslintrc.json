@@ -61,6 +61,8 @@
     "@typescript-eslint/no-empty-interface": "warn",
     "semi": "off",
     "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-use-before-define": "off",
     "comma-dangle": ["error", "always-multiline"],
     "@typescript-eslint/member-delimiter-style": [
       "error",

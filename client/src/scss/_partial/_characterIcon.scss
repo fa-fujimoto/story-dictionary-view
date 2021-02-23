@@ -1,7 +1,3 @@
-@import './color';
-@import './util';
-@import './z-index';
-
 @mixin character-icon($color) {
   background-color: $color;
 

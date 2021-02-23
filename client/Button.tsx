@@ -1,30 +1,63 @@
-import React, { FC, useState, useMemo } from 'react'
+import React, { FC, useState, useMemo, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { createClassName } from './Util'
 
+export type ButtonSize = 'sm' | 'md' | 'lg'
+export type ButtonColor = 'primary' | 'secondary' | 'positive' | 'negative' | 'danger'
+
 interface IButton {
-  modifire: string | string[]
+  size: ButtonSize
+  color: ButtonColor
+  className?: string
+  modifire?: string | string[]
   isDisabled?: boolean
-  onClick: () => void
+  onClick?: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  linkTo?: string
 }
 
-const Button: FC<IButton> = ({modifire, isDisabled, onClick, children}) => {
+const Button: FC<IButton> = ({size, color, className = '', modifire, isDisabled, onClick, onMouseEnter, onMouseLeave, children, linkTo}) => {
   const [isActive, setIsActive] = useState<boolean>(false)
-  const classNameList = useMemo<string[]>(() => [createClassName('button', '', modifire)], [modifire, isActive])
+  const classNameList = useMemo<string[]>(() => [createClassName('button', '', modifire), className, `--${size}`, `--${color}`], [modifire, size, color])
   const handleClick = useMemo(() => isDisabled ? (): void => undefined : onClick, [isDisabled, onClick])
-  if (isDisabled) {
-    classNameList.push('disabled')
-  }
-  if (isActive) {
-    classNameList.push('active')
-  }
+  const renderInnerElement = useCallback((): JSX.Element => {
+    return (
+      linkTo ? (
+        <Link className="button__link" to={linkTo}>{children}</Link>
+      ) : (
+        <>{children}</>
+      )
+    )
+  }, [children, linkTo])
+
+  const handleMouseEnter = useCallback((): void => {
+    if (!isDisabled) {
+      setIsActive(true)
+
+      if (onMouseEnter) {
+        onMouseEnter()
+      }
+    }
+  }, [isDisabled, onMouseEnter, setIsActive])
+
+  const handleMouseLeave = useCallback((): void => {
+    if (!isDisabled) {
+      setIsActive(false)
+
+      if (onMouseLeave) {
+        onMouseLeave()
+      }
+    }
+  }, [isDisabled, onMouseLeave, setIsActive])
 
   return (
-    <div className={classNameList.join(' ')}
+    <div className={`${classNameList.join(' ')}${isActive ? ' --active' : ''}${isDisabled ? ' --disabled' : ''}`}
       onClick={handleClick}
-      onMouseEnter={(): void => isDisabled ? setIsActive(false) : setIsActive(true)}
-      onMouseLeave={(): void => isDisabled ? setIsActive(false) : setIsActive(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {children}
+      {renderInnerElement()}
     </div>
   )
 }

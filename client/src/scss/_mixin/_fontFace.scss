@@ -1,0 +1,20 @@
+@mixin font-face($fontName, $fileName, $weight) {
+  @font-face {
+    font-family: $fontName;
+    font-style: normal;
+    font-weight: $weight;
+    src: url('../font/#{$fileName}.ttf') format('truetype');
+  }
+}
+
+@mixin include-mplus($type) {
+  $baseFileName: 'mplus-#{$type}';
+
+  @include font-face('mplus', '#{$baseFileName}-thin', 200);
+  @include font-face('mplus', '#{$baseFileName}-light', 300);
+  @include font-face('mplus', '#{$baseFileName}-regular', 400);
+  @include font-face('mplus', '#{$baseFileName}-medium', 500);
+  @include font-face('mplus', '#{$baseFileName}-bold', 600);
+  // @include font-face('mplus', '#{$baseFileName}-heavy', 700);
+  // @include font-face('mplus', '#{$baseFileName}-black', 700);
+}

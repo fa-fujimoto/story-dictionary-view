@@ -1,0 +1,86 @@
+.project-sidemenu {
+  &__list {
+    padding: 0 0 32px;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    border-bottom: 1px solid $sidemenu-font-color;
+
+    &-inner {
+      position: relative;
+      padding-left: 48px;
+    }
+  }
+
+  &__link {
+    $base: &;
+
+    @extend %sidemenu-link;
+
+    position: relative;
+    padding: 16px 32px 16px 0;
+    font-size: 16px;
+
+    &-inner {
+      @extend %sidemenu-inner;
+
+      &::before {
+        @extend %sidemenu-inner-before;
+
+        height: 18px;
+      }
+    }
+
+    &:hover {
+      #{$base}-inner {
+        &::before {
+          @extend %sidemenu-inner-before-hover;
+        }
+      }
+    }
+  }
+
+  &__count {
+    @extend %sidemenu-count;
+  }
+
+  &__draw-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    cursor: pointer;
+    border: 1px solid $sidemenu-font-color;
+    border-radius: 4px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      margin: auto;
+      content: '';
+      border-top: 4px solid $sidemenu-font-color;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
+      transform: rotate(-90deg);
+    }
+
+    &:hover,
+    &.--active {
+      &::after {
+        transform: rotate(0);
+      }
+    }
+  }
+}

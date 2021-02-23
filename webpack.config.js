@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
           {

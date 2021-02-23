@@ -45,8 +45,21 @@
   margin: auto;
 }
 
-@mixin circle($size) {
+@mixin square($size) {
   width: $size;
   height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+
   border-radius: 50%;
+}
+
+@mixin ellipsis($width: 100%) {
+  display: inline-block;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

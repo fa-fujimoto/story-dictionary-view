@@ -1,53 +1,36 @@
-@import './_partial/public-point-selector';
-@import './_partial/pairSelectorItem';
-@import './_partial/relationList';
-@import './_partial/skillCard';
-@import './_partial/cutin';
-@import './_partial/diceroll';
-@import './_partial/dialog';
+@import '~simplebar/dist/simplebar.min.css';
+@import './_val/z-index';
+@import './_val/color';
+@import './_val/size';
+@import './_mixin/fontFace';
+@import './_mixin/util';
+@import './_placeholder/sidemenuListItem';
+@import './_partial/avatar';
+@import './_partial/user';
+@import './_partial/userInfo';
+@import './_partial/tabBar';
+@import './_partial/userHeader';
+@import './_partial/body';
+@import './_partial/headerDropdown';
+@import './_partial/header';
+@import './_partial/logo';
+@import './_partial/icon';
 @import './_partial/button';
-@import './_partial/characterSelector';
-@import './_partial/characterViewer';
-@import './_partial/characterIcon';
-@import './_partial/util';
-@import './_partial/z-index';
+@import './_partial/followButton';
+@import './_partial/input';
+@import './_partial/select';
+@import './_partial/filterForm';
+@import './_partial/project';
+@import './_partial/projectsIndex';
+@import './_partial/projectItem';
+@import './_partial/projectSidemenu';
+@import './_partial/categoriesList';
 
-#app {
-  font-family: 'Sawarabi Mincho', serif;
-}
+@include include-mplus('2m');
 
-.relation {
-  position: relative;
-  margin: auto;
-
-  &__diagram {
-    @include centerize();
-
-    z-index: $relation-characters-index;
-    list-style-type: none;
-
-    &--click-area {
-      z-index: $relation-characters-click-area-index;
-    }
-  }
-
-  &__character {
-    position: absolute;
-    z-index: $relation-characters-index;
-    display: inline-block;
-
-    &--active {
-      z-index: $relation-chacter-active-index;
-    }
-  }
-
-  &__line {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: $relation-line-index;
-    margin: auto;
-  }
+body {
+  font-family: mplus, sans-serif;
+  font-size: 14px;
+  color: $body-font-color;
+  background-color: $body-bg-color;
 }

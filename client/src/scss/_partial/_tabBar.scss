@@ -1,0 +1,80 @@
+.tab-bar {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  & &__item {
+    display: inline-block;
+  }
+
+  & &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 68px;
+    padding: 0 16px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+    color: $tabbar-font-color;
+    text-decoration: none;
+
+    &-inner {
+      z-index: $tabbar-text-index;
+      transition: 0.3s;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: $tabbar-bg-index;
+      width: 100%;
+      height: 0;
+      content: '';
+      transition: 0.3s;
+    }
+
+    &::before {
+      right: 16px;
+      left: -16px;
+      border-bottom: 68px solid $user-header-nav-bar-bg;
+      border-left: 32px solid transparent;
+    }
+
+    &::after {
+      right: -16px;
+      left: 16px;
+      border-top: 68px solid $user-header-nav-bar-bg;
+      border-right: 32px solid transparent;
+    }
+
+    &.--active {
+      color: $tabbar-font-color-active;
+
+      &::before {
+        border-bottom-color: $tabbar-bg-color-active;
+      }
+
+      &::after {
+        border-top-color: $tabbar-bg-color-active;
+      }
+    }
+
+    &:not(.--active).--hover {
+      color: $tabbar-font-color-hover;
+
+      &::before {
+        border-bottom-color: $tabbar-bg-color-hover;
+      }
+
+      &::after {
+        border-top-color: $tabbar-bg-color-hover;
+      }
+    }
+  }
+}
